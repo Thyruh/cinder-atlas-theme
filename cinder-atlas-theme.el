@@ -4,6 +4,7 @@
 ;; Version: 0.1.0
 ;; Package-Requires: ((emacs "27.1"))
 ;; SPDX-License-Identifier: MIT
+;; URL: https://github.com/Thyruh/cinder-atlas-theme
 ;;
 ;; This file is distributed under the MIT License.
 
