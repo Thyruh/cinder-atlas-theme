@@ -1,13 +1,12 @@
 ;;; cinder-atlas-theme.el --- Cinder Atlas theme -*- lexical-binding: t; -*-
 
 ;; Author: Thyruh
-;; Version: 0.1.0
+;; Version: 0.1.1
 ;; Package-Requires: ((emacs "27.1"))
 ;; SPDX-License-Identifier: MIT
 ;; URL: https://github.com/Thyruh/cinder-atlas-theme
 ;;
 ;; This file is distributed under the MIT License.
-
 
 
 ;;; MIT License
@@ -97,18 +96,28 @@
    `(compilation-warning ((t (:foreground ,warning :weight bold))))
    `(compilation-error   ((t (:foreground ,error :weight bold))))
 
-   ;; mode-line
-   `(mode-line ((t (:background ,text :foreground ,background :box t))))
-   `(mode-line-inactive ((t (:background ,background :foreground ,text))))
 
-   ;; tab-bar
-   `(tab-bar ((t (:background ,background))))
-   `(tab-bar-tab ((t (:background ,text :foreground ,background))))
-   `(tab-bar-tab-inactive ((t (:background ,background :foreground ,text))))
+   ;; (v0.1.1) Fixed: https://emacs.stackexchange.com/questions/85836/i-need-help-extending-my-theme-mode-line-inactive-selection-framing
+   ;; thanks to NickD.
+   
+   ;; mode-line
+   `(mode-line
+	 ((t (:background ,text
+					  :foreground ,background
+					  :box (:line-width 1 :color "#bfbfbf")))))
+                         ;; @Unstable:  ^ Changing this to 0 makes all the colours blow up for some reason.
+                         ;;               @TRY: Remove the box option completely from here.
+
+   `(mode-line-inactive
+	 ((t (:background ,background
+					  :foreground ,text
+					  :box (:line-width 1 :color "#bfbfbf")))))
+
 
    ;; misc
    `(error ((t (:foreground ,error))))
    `(which-func ((t (:weight bold))))))
+
 
 ;;;###autoload
 (when (and (boundp 'custom-theme-load-path) load-file-name)

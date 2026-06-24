@@ -34,7 +34,7 @@ init.el, whatever):
              "/path/to/cinder-atlas-theme/")
 ```
 
-Use `M-x customize-themes` to change your current theme.
+Use `M-x customize-themes` or `M-x load-theme` to change your current theme.
 
 
 
