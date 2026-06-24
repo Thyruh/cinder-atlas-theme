@@ -31,7 +31,7 @@ init.el, whatever):
 
 ```
 (add-to-list 'custom-theme-load-path
-             "/path/to/gruber-darker-theme/")
+             "/path/to/cinder-atlas-theme/")
 ```
 
 Use `M-x customize-themes` to change your current theme.
